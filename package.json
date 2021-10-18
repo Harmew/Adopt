@@ -1,0 +1,26 @@
+{
+  "name": "adopt",
+  "version": "1.0.0",
+  "description": "um site de adoção",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harmew/Adopt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harmew/Adopt/issues"
+  },
+  "homepage": "https://github.com/Harmew/Adopt#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
+}

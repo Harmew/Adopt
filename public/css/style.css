@@ -56,6 +56,7 @@ body {
 .cadastro-itens li a {
   color: var(--preto);
   transition: .3s;
+  margin-left: 20px;
 }
 
 .cadastro-itens li a:hover {
