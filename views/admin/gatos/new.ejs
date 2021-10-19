@@ -1,0 +1,89 @@
+<%- include("../../partials/header.ejs") %>
+    <%- include("../../partials/navbar.ejs") %>
+
+        <div class="container">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Cadastro de Gatos</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/gatos/save" method="POST" enctype="multipart/form-data">
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="nome" name="name" required>
+                            <label for="name">Nome</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="number" id="age" name="age" required>
+                            <label for="age">Idade</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="number" id="weight" name="weight" required>
+                            <label for="weight">Peso</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex" id="sex" value="MASC" checked>
+                                <label class="form-check-label" for="sex">Masculino</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="sex" id="sexf" value="FEM">
+                                <label class="form-check-label" for="sexf">Feminino</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="castrated" id="castrated" value="true">
+                                <label class="form-check-label" for="castrated">Castrado</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="castrated" id="notcastrated" value="false" checked>
+                                <label class="form-check-label" for="notcastrated">Não Castrado</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="deficient" id="deficient" value="true">
+                                <label class="form-check-label" for="deficient">Deficiente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="deficient" id="notdeficient" value="false" checked>
+                                <label class="form-check-label" for="notdeficient">Não Deficiente</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea class="form-control" id="description" name="description" style="height: 150px;" required maxlength="530"></textarea>
+                            <label for="description">Descrição</label>
+                        </div>
+
+                        <br>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="tel" name="tel" required>
+                            <label for="tel">Telefone</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="mb-3 mt-1">
+                            <label for="image" class="form-label">Imagem</label>
+                            <input class="form-control" type="file" name="image" id="image" required>
+                        </div>
+
+                        <input class="btn btn-success" type="submit" value="Cadastrar">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <%- include("../../partials/footer.ejs") %>

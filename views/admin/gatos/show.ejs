@@ -1,0 +1,88 @@
+<%- include("../../partials/header.ejs") %>
+    <%- include("../../partials/navbar.ejs") %>
+
+        <div class="container">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Vizualização de Gatos</h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="nome" name="name" required value="<%= cat.name %>" disabled>
+                            <label for="name">Nome</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="number" id="age" name="age" required value="<%= cat.age %>" disabled>
+                            <label for="age">Idade</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="number" id="weight" name="weight" required value="<%= cat.weight %>" disabled>
+                            <label for="weight">Peso</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sex" id="sex" value="MASC" <%= cat.sex == 'MASC' ? 'checked' : 'disabled'%>>
+                                <label class="form-check-label" for="sex">Masculino</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="sex" id="sexf" value="FEM" <%= cat.sex == 'FEM' ? 'checked' : 'disabled'%>>
+                                <label class="form-check-label" for="sexf">Feminino</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="castrated" id="castrated" value="true" <%= cat.castrated == '1' ? 'checked' : 'disabled'%>>
+                                <label class="form-check-label" for="castrated">Castrado</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="castrated" id="notcastrated" value="false" <%= cat.castrated == '1' ? 'disabled' : 'checked'%> >
+                                <label class="form-check-label" for="notcastrated">Não Castrado</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="deficient" id="deficient" value="true" <%= cat.deficient == '1' ? 'checked' : 'disabled'%>>
+                                <label class="form-check-label" for="deficient">Deficiente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="deficient" id="notdeficient" value="false"  <%= cat.deficient == '1' ? 'disabled' : 'checked'%> >
+                                <label class="form-check-label" for="notdeficient">Não Deficiente</label>
+                            </div>
+                        </div>
+
+                        <div class="form-floating">
+                            <textarea class="form-control" id="description" name="description" style="height: 150px;" required disabled><%= cat.description %></textarea>
+                            <label for="description">Descrição</label>
+                        </div>
+
+                        <br>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="text" id="tel" name="tel" required disabled value="<%= cat.tel %>">
+                            <label for="tel">Telefone</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" type="email" id="email" name="email" required disabled value="<%= cat.email %>">
+                            <label for="email" >Email</label>
+                        </div>
+
+                        <div class="mb-3 mt-1">
+                            <label for="image" class="form-label">Imagem</label>
+                            <input class="form-control" type="file" name="image" id="image" disabled>
+                        </div>
+
+                        <input type="hidden" name="id" id="id" value="<%= cat.id %>"> 
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <%- include("../../partials/footer.ejs") %>

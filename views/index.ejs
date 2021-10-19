@@ -1,81 +1,36 @@
-<%- include ("partials/header.ejs") %>
-<body>
- <header class="header">
-    <a href="/"><h1>Adopt</h1></a>
-    <nav>
-      <ul class="cadastro-itens">
-        <li><a href="/sobre">Sobre Nós</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/registro">Registro</a></li>
-      </ul>
-    </nav>
- </header>
+<%- include("partials/header.ejs") %>
+    <%- include("partials/headerPag.ejs") %>
 
- <main class="principal">
+        <main class="main">
+            <div class="container">
+                <% cats.forEach(cat=> { %>
 
-  <section class="item">
-    <div class="perfil">
-      <img src="/css/img/cat-1046544_640.jpg" alt="">
-      <p>Laranjinha</p>
-      <span>2 anos</span>
-    </div>
-    <div class="texto">
-      <h3>Sobre Mim</h3>
-      <p>Eu sou uma gata que foi encontrada de baixo da ponte, eu estava muito assustada e quem me resgatou tratou de mim com muito amor, hoje em dia eu sou castrada e vacinada e a espera de um lar amoroso</p>
-      <div class="button-container">    
-        <button>Adote-me</button>
-      </div>
-    </div>
-  </section>
+                    <div class="row item">
+                        <div class="col-md-3 item-principal">
+                            <img src="/images/<%= cat.url %>" alt="<%= cat.name %>">
+                            <h3>
+                                <%= cat.name %>
+                            </h3>
+                            <p>
+                                <%= cat.age %>
+                                    <%= cat.age===1 ? 'ano' : 'anos' %>
+                            </p>
+                        </div>
+                        <div class="col-md-9 item-texto">
+                            <h2>Sobre Mim</h2>
+                            <p>
+                                <%= cat.description %>
+                            </p>
+                            <div class="button-container">
+                                <a href="/gatos/<%= cat.id %>" class="button">Adote-me</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </main>
 
-  <section class="item">
-    <div class="perfil">
-      <img src="css/img/cat-300572_640.jpg" alt="">
-      <p>Marronzin</p>
-      <span>3 anos</span>
-    </div>
-    <div class="texto">
-      <h3>Sobre Mim</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, cumque laborum nobis odit quos impedit eaque rem nemo temporibus tenetur assumenda harum quidem tempora accusantium eligendi. Quam nostrum rerum praesentium.</p>
-      <div class="button-container">    
-        <button>Adote-me</button>
-      </div>
-    </div>
-  </section>
+        <%- include("partials/footerPag.ejs") %>
 
-  <section class="item">
-    <div class="perfil">
-      <img src="css/img/cat-3687275_640.jpg" alt="">
-      <p>Manchadinha</p>
-      <span>7 anos</span>
-    </div>
-    <div class="texto">
-      <h3>Sobre Mim</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi error nobis in esse perferendis iste laudantium dolores facere ad eveniet ratione, quos laboriosam dolorum numquam nihil nulla repellendus ducimus harum.</p>
-      <div class="button-container">    
-        <button>Adote-me</button>
-      </div>
-    </div>
-  </section>
 
-  <section class="item">
-    <div class="perfil">
-      <img src="css/img/cat-5778777_640.jpg" alt="">
-      <p>Spike</p>
-      <span>5 anos</span>
-    </div>
-    <div class="texto">
-      <h3>Sobre Mim</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error expedita repellat vero exercitationem facere! Numquam recusandae maxime amet exercitationem ipsum dolores doloremque facilis similique, laborum veritatis aperiam illum itaque optio!</p>
-      <div class="button-container">    
-        <button>Adote-me</button>
-      </div>
-    </div>
-  </section>
- </main>
- 
- <footer class="footer">
-    <p>Todos os direitos reservados ©</p>
- </footer>
-</body>
-</html>
+            <%- include("partials/footer.ejs") %>

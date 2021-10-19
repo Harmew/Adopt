@@ -1,37 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt - Sobre Nós</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sobre.css">
-    <link rel="stylesheet" href="../css/responsive.css"> 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
+<%- include("partials/header.ejs") %>
 
-    <header class="header">
-        <a href="/"><h1>Adopt</h1></a>
-        <nav>
-            <ul class="cadastro-itens">
-                <li><a href="/sobre">Sobre Nós</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/registro">Registro</a></li>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <h1>Sobre</h1>
+    </body>
 
-    <main class="principal-sobre">
-        <h1><%= nome %></h1>
-        <p>Sobre Nós</p>
-    </main>
-
-    <footer class="footer">
-        <p>Todos os direitos reservados ©</p>
-    </footer>
-</body>
-</html>
+<%- include("partials/footer.ejs") %>

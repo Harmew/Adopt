@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+    <%- include("partials/headerPag.ejs") %>
+
+        <div class="container gato">
+            <div class='row gato-inicial'>
+                <div class="icon col-md-6">
+                    <img src="/images/<%= cat.url %>" alt="<%= cat.name %>">
+                </div>
+                <div class="gato-texto col-md-6">
+                    <p class="texto-inicial">Olá pelo visto você se interressou por mim, fico feliz!</p>
+                    <p class="texto-secundario">Meu nome é <span>
+                            <%= cat.name %>
+                        </span>
+                    </p>
+                    <p>
+                        <%= cat.description %>
+                    </p>
+                </div>
+            </div>
+            <div class='row '>
+                <div class="col-md-6">
+                    <ul class="atributos">
+                        <li>Idade: <%= cat.age %>
+                        </li>
+                        <li>Peso: <%= cat.weight %>kg
+                        </li>
+                        <li>Sexo: <%= cat.sex==='MASC' ? 'Masculino' : 'Feminino' %>
+                        </li>
+                        <li>Castrado: <%= cat.castrated=='1' ? 'Sim' : 'Não' %>
+                        </li>
+                        <li>Deficiente: <%= cat.deficient=='1' ? 'Sim' : 'Não' %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contato col-md-6">
+                    <h3 class="subtitulo">Contato</h3>
+                    <p class="menu-i">Whatsapp</p>
+                    <a class="i-menu" href="https://api.whatsapp.com/send/?phone=<%= cat.tel %>&text&app_absent=0" target="_blank">Enviar Mensagem</a>
+                    <p class="menu-i">Email</p>
+                    <a class="i-menu" href="mailto:<%= cat.email %>">
+                        <%= cat.email %>
+                    </a>
+                    <p class="i-texto">Muito obrigado por particiar na mudança da vida de mais um animal! desde já agradeçemos pelo interesse.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <%- include("partials/footerPag.ejs") %>
+
+            <%- include("partials/footer.ejs") %>
