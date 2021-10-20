@@ -12,19 +12,19 @@ const Gatos = connection.define("gatos", {
     },
     weight: {
         type: Sequelize.FLOAT,
-        allowNull: false
+        allowNull: false,
     },
     sex: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: false,
     },
     castrated: {
         type: Sequelize.BOOLEAN,
-        allowNull: false
-    },    
+        allowNull: false,
+    },
     deficient: {
         type: Sequelize.BOOLEAN,
-        allowNull: false
+        allowNull: false,
     },
     description: {
         type: Sequelize.TEXT,
@@ -32,11 +32,11 @@ const Gatos = connection.define("gatos", {
     },
     tel: {
         type: Sequelize.FLOAT,
-        allowNull: false
+        allowNull: false,
     },
     email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
     },
     url: {
         type: Sequelize.STRING,
@@ -44,6 +44,6 @@ const Gatos = connection.define("gatos", {
     },
 });
 
-Gatos.sync({force: false})
+Gatos.sync({ force: false });
 
 module.exports = Gatos;

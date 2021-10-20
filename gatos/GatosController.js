@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Gatos = require("./Gatos");
 const path = require("path");
+const adminAuth = require("../middlewares/adminAuth");
 
 // Multer
 const multer = require("multer");
@@ -18,7 +19,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Rota para Adicionar os Gatos (ADMIN)
-router.get("/admin/gatos/new", (req, res) => {
+router.get("/admin/gatos/new", adminAuth, (req, res) => {
     res.render("./admin/gatos/new");
 });
 
@@ -71,7 +72,7 @@ router.post("/gatos/save", upload.single("image"), (req, res) => {
 });
 
 // Rota para Controlar os Gatos
-router.get("/admin/gatos", (req, res) => {
+router.get("/admin/gatos", adminAuth, (req, res) => {
     Gatos.findAll().then((cats) => {
         res.render("admin/gatos/index", { cats: cats });
     });
@@ -96,7 +97,7 @@ router.post("/gatos/delete", (req, res) => {
     }
 });
 
-router.get("/admin/gatos/show/:id", (req, res) => {
+router.get("/admin/gatos/show/:id", adminAuth, (req, res) => {
     const id = req.params.id;
 
     if (isNaN(id)) {

@@ -1,45 +1,56 @@
 <%- include("../../partials/header.ejs") %>
-<%- include("../../partials/navbar.ejs") %>
+    <%- include("../../partials/navbar.ejs") %>
 
-<div class="container">
-    <br>
-    <h2>Gatos Painel</h2>
-    <br>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Sexo</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% cats.forEach(cat => { %>
-                <tr>
-                    <th><%= cat.id %></th>
-                    <th><%= cat.name %></th>
-                    <th><%= cat.age %></th>
-                    <th><%= cat.sex %></th>
-                    <th style="max-width: 0px;">
-                        <a href="/admin/gatos/show/<%= cat.id %>"class="btn btn-warning">Vizualizar</a>
+        <div class="container">
+            <br>
+            <h2>Gatos Painel</h2>
+            <br>
+            <a class="btn btn-success" href="/admin/gatos/new">Novo Gato</a>
+            <br>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Sexo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% cats.forEach(cat=> { %>
+                        <tr>
+                            <th>
+                                <%= cat.id %>
+                            </th>
+                            <th>
+                                <%= cat.name %>
+                            </th>
+                            <th>
+                                <%= cat.age %>
+                            </th>
+                            <th>
+                                <%= cat.sex %>
+                            </th>
+                            <th style="max-width: 0px;">
+                                <a href="/admin/gatos/show/<%= cat.id %>" class="btn btn-warning">Vizualizar</a>
 
-                        <form action="/gatos/delete" method="POST" style="display: inline;" onsubmit="confirmarDelecao(event, this)">
-                            <input type="hidden" name="id" value="<%= cat.id %>">
-                            <button class="btn btn-danger">Deletar</button>
-                        </form>
-                    </th>
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
-</div>
-<script>
-    function confirmarDelecao(event, form) {
-        event.preventDefault()
-        const decisao = confirm("Deseja realmente deletar o animal")
-        if(decisao) form.submit()
-    }
-</script>
-<%- include("../../partials/footer.ejs") %>
+                                <form action="/gatos/delete" method="POST" style="display: inline;" onsubmit="confirmarDelecao(event, this)">
+                                    <input type="hidden" name="id" value="<%= cat.id %>">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+                            </th>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <script>
+            function confirmarDelecao(event, form) {
+                event.preventDefault()
+                const decisao = confirm("Deseja realmente deletar o animal")
+                if (decisao) form.submit()
+            }
+        </script>
+        <%- include("../../partials/footer.ejs") %>

@@ -1,0 +1,27 @@
+<%- include("../../partials/header.ejs") %>
+
+    <div class="container">
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Login de Usuário</h2>
+            </div>
+            <div class="card-body">
+                <form action="/authenticate" method="POST">
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="password" id="password" name="password" required>
+                        <label for="password">Senha</label>
+                    </div>
+
+                    <input type="submit" class="btn btn-success " value="Logar Usuário">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <%- include("../../partials/footer.ejs") %>
