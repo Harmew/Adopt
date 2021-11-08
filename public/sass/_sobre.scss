@@ -1,12 +1,14 @@
+@import "variaveis";
+
 .subtitle-sobre {
     text-align: center;
-}
 
-.subtitle-sobre h2 {
-    display: inline-block;
-    margin: 30px auto;
-    font-size: 1.75em;
-    color: green;
+    h2 {
+        display: inline-block;
+        margin: 30px auto;
+        font-size: 1.75em;
+        color: $verde;
+    }
 }
 
 .resgate {
@@ -21,34 +23,34 @@
     isolation: isolate;
     margin-top: 30px;
     margin-bottom: 40px;
-}
 
-.resgate::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: black;
-    opacity: 0.3;
-}
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: $preto;
+        opacity: 0.3;
+    }
 
-.resgate::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0)
-    );
-}
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0)
+        );
+    }
 
-.resgate p {
-    color: white;
-    font-size: 2em;
-    text-align: center;
+    p {
+        color: $branco;
+        font-size: 2em;
+        text-align: center;
+    }
 }
 
 .textinho {
@@ -61,10 +63,10 @@
 .sobre {
     text-align: center;
     margin-bottom: 40px;
-}
 
-.sobre p {
-    font-size: 1.5em;
+    p {
+        font-size: 1.5em;
+    }
 }
 
 @media (max-width: 800px) {
